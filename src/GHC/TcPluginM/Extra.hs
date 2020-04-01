@@ -96,14 +96,14 @@ import Data.List     (groupBy, partition, sortOn)
 #if __GLASGOW_HASKELL__ < 809
 import TcRnTypes     (Ct (..), ctLoc, ctEvId, mkNonCanonical)
 #else
-import Constraint
+import TcRnTypes
   (Ct (..), CtEvidence (..), CtLoc, ctLoc, ctEvId, mkNonCanonical)
 #endif
 import TcType        (TcTyVar, TcType)
 #if __GLASGOW_HASKELL__ < 809
 import Type          (mkPrimEqPred)
 #else
-import Predicate     (mkPrimEqPred)
+import GhcPlugins     (mkPrimEqPred)
 #endif
 #if __GLASGOW_HASKELL__ < 711
 import TcRnTypes     (ctEvTerm)
