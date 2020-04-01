@@ -390,7 +390,7 @@ substType _subst t@(ForAllTy _tv _ty) =
   -- ForAllTy tv (substType subst ty)
   t
 #if __GLASGOW_HASKELL__ >= 809
-substType subst (FunTy af t1 t2) =
+substType subst (FunTy _ af t1 t2) =
   FunTy af (substType subst t1) (substType subst t2)
 #elif __GLASGOW_HASKELL__ >= 802
 substType subst (FunTy t1 t2) =
